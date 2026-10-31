@@ -11,8 +11,13 @@ public class ServerJavaApplication {
     public static void main(String[] args) {
 
         // Load environment variables from .env
+//        Dotenv dotenv = Dotenv.configure()
+//                .directory("C:/Users/ujjva/Desktop/NeuroMart/server-java")
+//                .load();
+
+//        Env File Config
         Dotenv dotenv = Dotenv.configure()
-                .directory("C:/Users/ujjva/Desktop/NeuroMart/server-java")
+                .ignoreIfMissing()
                 .load();
 
         // Make variables available to Spring Boot
