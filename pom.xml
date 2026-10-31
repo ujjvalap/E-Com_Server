@@ -28,6 +28,12 @@
     <artifactId>dotenv-java</artifactId>
     <version>3.0.0</version>
 </dependency>
+<!--	Public Route Helth check -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<!-- Web & REST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
