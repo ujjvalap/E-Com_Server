@@ -22,6 +22,12 @@
 	</properties>
 
 	<dependencies>
+	<!-- Load .env configuration -->
+<dependency>
+    <groupId>io.github.cdimascio</groupId>
+    <artifactId>dotenv-java</artifactId>
+    <version>3.0.0</version>
+</dependency>
 		<!-- Web & REST -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -118,6 +124,13 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!-- Tesing The small Junit Test script  -->
+	<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <version>5.10.2</version>
+    <scope>test</scope>
+</dependency>
 	</dependencies>
 
 	<build>
