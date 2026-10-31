@@ -1,20 +1,3 @@
-// package com.neuromart;
-
-// import org.springframework.boot.SpringApplication;
-// import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-// @SpringBootApplication
-// public class ServerJavaApplication {
-
-// 	public static void main(String[] args) {
-// 		SpringApplication.run(ServerJavaApplication.class, args);
-// 	}
-
-// }
-
-
-
-
 
 package com.neuromart;
 
@@ -29,7 +12,7 @@ public class ServerJavaApplication {
 
         // Load environment variables from .env
         Dotenv dotenv = Dotenv.configure()
-                .directory("./")
+                .directory("C:/Users/ujjva/Desktop/NeuroMart/server-java")
                 .load();
 
         // Make variables available to Spring Boot
