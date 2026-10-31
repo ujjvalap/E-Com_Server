@@ -38,12 +38,12 @@ This is the production-ready Java Spring Boot backend for **NeuroMart**, migrate
 ## ⚙️ Configuration (`src/main/resources/application.properties`)
 
 ```properties
-server.port=5000
+server.port=
 
 # MySQL DataSource
-spring.datasource.url=jdbc:mysql://localhost:3306/neuromart?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-spring.datasource.username=root
-spring.datasource.password=root
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 # JPA / Hibernate
@@ -51,20 +51,20 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=false
 
 # Security & JWT
-neuromart.jwt.secret=ujjvalpateliya@170105
-neuromart.jwt.expire-hours=48
-neuromart.jwt.issuer=NeuroMarth_Backend
-neuromart.jwt.audience=http://localhost:5173
-neuromart.client.url=http://localhost:5173
+neuromart.jwt.secret=
+neuromart.jwt.expire-hours=
+neuromart.jwt.issuer=
+neuromart.jwt.audience=
+neuromart.client.url=
 
 # Cloudinary
-cloudinary.cloud-name=dp2xua7qf
-cloudinary.api-key=275131136268192
-cloudinary.api-secret=jnc2D3vwYSdr7SGlZiQT-CJ6eqA
+cloudinary.cloud-name=
+cloudinary.api-key=
+cloudinary.api-secret=
 
 # Razorpay
-razorpay.key-id=rzp_test_RDd2Pd7LEYMgKU
-razorpay.key-secret=9GS7fHiRv102dxsUFEEZvPC4
+razorpay.key-id=
+razorpay.key-secret=
 ```
 
 > You can override any of these via environment variables (e.g. `DB_URL`, `DB_USER`, `DB_PASSWORD`, `JWT_SECRET_KEY`, `CLOUDINARY_NAME`, etc.).
