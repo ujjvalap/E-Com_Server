@@ -29,3 +29,8 @@ logs/
 # Local secret configuration
 application-local.properties
 application-secret.properties
+
+
+.env
+.env.*
+!.env.example
