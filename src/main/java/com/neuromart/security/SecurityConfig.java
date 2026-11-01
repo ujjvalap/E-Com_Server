@@ -83,6 +83,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Public routes
                         .requestMatchers(
+                                "/health",
                                 "/api/v1/register",
                                 "/api/v1/login",
                                 "/api/v1/logout",

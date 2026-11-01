@@ -23,22 +23,32 @@ public class JwtTokenProvider {
     private final String audience;
 
     public JwtTokenProvider(
-            @Value("${neuromart.jwt.secret:ujjvalpateliya@170105}") String secret,
-            @Value("${neuromart.jwt.expire-hours:48}") long expireHours,
-            @Value("${neuromart.jwt.issuer:NeuroMarth_Backend}") String issuer,
-            @Value("${neuromart.jwt.audience:http://localhost:5173}") String audience
+            @Value("${neuromart.jwt.secret}") String secret,
+            @Value("${neuromart.jwt.expire-hours}") long expireHours,
+            @Value("${neuromart.jwt.issuer}") String issuer,
+            @Value("${neuromart.jwt.audience}") String audience
     ) {
-        this.expireMillis = expireHours * 3600 * 1000;
+        if (secret == null || secret.isBlank()) {
+            throw new IllegalStateException("JWT secret is missing");
+        }
+
+        if (expireHours <= 0) {
+            throw new IllegalArgumentException("Invalid JWT expiration");
+        }
+
+        this.expireMillis = Math.multiplyExact(
+                expireHours, 3_600_000L
+        );
+
         this.issuer = issuer;
         this.audience = audience;
 
-        // Ensure key is at least 256 bits by hashing secret with SHA-256
         try {
             MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
             byte[] hash = sha256.digest(secret.getBytes(StandardCharsets.UTF_8));
             this.key = Keys.hmacShaKeyFor(hash);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("SHA-256 not supported", e);
+            throw new IllegalStateException("SHA-256 unavailable", e);
         }
     }
 
